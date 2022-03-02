@@ -1,0 +1,5 @@
+{
+  [
+    {"testpackage": {"baseurl": "https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/testpackage/", "readme": "https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/testpackage/README.md"}}
+  ]
+}
