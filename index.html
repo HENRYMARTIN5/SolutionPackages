@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SolutionPackages</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <span>All packages:</span>
+        <ul id="packages"><li>Loading...</li></ul>
+        <script>
+            // Get a file from the given url, parse through the text line-by-line, and add it to the packages element
+            fetch('https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/packages.txt')
+                .then(response => response.text())
+                .then(text => {
+                    console.log("Downloaded latest list!");
+                    let packages = text.split('\n');
+                    let packagesList = document.getElementById('packages');
+                    var i = 0;
+                    packagesList.innerHTML = '';
+                    packages.forEach(package => {
+                        if(package != ""){
+                            packagesList.innerHTML += `<li>${package}</li>`;
+                        } else {
+                            console.warn("Skipped package due to empty name!");
+                            
+                        }
+                        i++;
+                    });
+                });
+        </script>
+    </body>
+</html>
