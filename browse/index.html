@@ -1,101 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="/SolutionPackages/assets/css/style.css" media="screen" type="text/css">
-    <link rel="stylesheet" href="/SolutionPackages/assets/css/print.css" media="print" type="text/css">
 
-    <!--[if lt IE 9]>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://henrymartin5.github.io/SolutionPackages/assets/css/style.css" media="screen"
+    type="text/css">
+  <link rel="stylesheet" href="https://henrymartin5.github.io/SolutionPackages/assets/css/print.css" media="print"
+    type="text/css">
+
+  <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Browse All | SolutionPackages</title>
-<meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="TestPackage" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="The official source for pHLang Packages" />
-<meta property="og:description" content="The official source for pHLang Packages" />
-<link rel="canonical" href="https://henrymartin5.github.io/SolutionPackages/testpackage/" />
-<meta property="og:url" content="https://henrymartin5.github.io/SolutionPackages/testpackage/" />
-<meta property="og:site_name" content="SolutionPackages" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="TestPackage" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"The official source for pHLang Packages","headline":"TestPackage","url":"https://henrymartin5.github.io/SolutionPackages/testpackage/"}</script>
-<!-- End Jekyll SEO tag -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>Browse All | SolutionPackages</title>
+  <meta name="generator" content="Jekyll v3.9.2" />
+  <meta property="og:title" content="TestPackage" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="The official source for pHLang Packages" />
+  <meta property="og:description" content="The official source for pHLang Packages" />
+  <link rel="canonical" href="https://henrymartin5.github.io/SolutionPackages/testpackage/" />
+  <meta property="og:url" content="https://henrymartin5.github.io/SolutionPackages/testpackage/" />
+  <meta property="og:site_name" content="SolutionPackages" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="TestPackage" />
+
+  <style>
+    .package-tile {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .package-tile-content {
+      display: inline-block;
+      width: 100%;
+      padding: 1em;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    .package-tile-content-author a {
+      color: rgb(0, 42, 77);
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "description": "The official source for pHLang Packages",
+      "headline": "TestPackage",
+      "url": "https://henrymartin5.github.io/SolutionPackages/testpackage/"
+    }
+  </script>
+  <!-- End Jekyll SEO tag -->
 
 
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+  <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
-<!-- Setup Google Analytics -->
+  <!-- Setup Google Analytics -->
 
 
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/SolutionPackages/favicon.ico" -->
+  <!-- You can set your favicon here -->
+  <!-- link rel="shortcut icon" type="image/x-icon" href="/SolutionPackages/favicon.ico" -->
 
-<!-- end custom head snippets -->
+  <!-- end custom head snippets -->
 
-  </head>
+</head>
 
-  <body>
-    <header>
-      <div class="inner">
-        <a href="https://henrymartin5.github.io/SolutionPackages/">
-          <h1>SolutionPackages</h1>
-        </a>
-        <h2>The official source for pHLang Packages</h2>
-        
-          <a href="https://github.com/HENRYMARTIN5/SolutionPackages" class="button"><small>View project on</small> GitHub</a>
-        
-        
-      </div>
-    </header>
+<body>
+  <header>
+    <div class="inner">
+      <a href="https://henrymartin5.github.io/SolutionPackages/">
+        <h1>SolutionPackages</h1>
+      </a>
+      <h2>The official source for pHLang Packages</h2>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1 id="allpackages">All Packages</h1>
-          <ul id="packages"><li>Loading...</li></ul>
-          <script>
-              // Get a file from the given url, parse through the text line-by-line, and add it to the packages element
-              fetch('https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/packages.txt')
-                  .then(response => response.text())
-                  .then(text => {
-                      console.log("Downloaded latest list!");
-                      let packages = text.split('\n');
-                      let packagesList = document.getElementById('packages');
-                      var i = 0;
-                      packagesList.innerHTML = '';
-                      packages.forEach(package => {
-                          if(package != ""){
-                              packagesList.innerHTML += `<li><a href="https://henrymartin5.github.io/SolutionPackages/${package}">${package}</a></li>`;
-                          } else {
-                              console.warn("Skipped package due to empty name!");
-                              
-                          }
-                          i++;
-                      });
-                  });
-          </script>
-        </section>
+      <a href="https://github.com/HENRYMARTIN5/SolutionPackages" class="button"><small>View project on</small>
+        GitHub</a>
 
-        <aside id="sidebar">
-          
 
-          
-            <p class="repo-owner"><a href="https://github.com/HENRYMARTIN5/SolutionPackages">SolutionPackages</a> is maintained by <a href="https://github.com/HENRYMARTIN5">HENRYMARTIN5</a>.</p>
-          
-
-          <p>This page was (partly) generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
-        </aside>
-      </div>
     </div>
+  </header>
 
-  </body>
+  <div id="content-wrapper">
+    <div class="inner clearfix">
+      <section id="main-content">
+        <h1 id="allpackages">All Packages</h1>
+        <div id="packages"><span>Loading...</span></div>
+        <script>
+          function truncateText(text, length) {
+            if (text.length <= length) {
+              return text;
+            }
+
+            return text.substr(0, length) + '\u2026'
+          }
+          // Get a file from the given url, parse through the text line-by-line, and add it to the packages element
+          fetch('https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/packages.txt')
+            .then(response => response.text())
+            .then(text => {
+              console.log("Downloaded latest list!");
+              let packages = text.split('\n');
+              let packagesList = document.getElementById('packages');
+              var i = 0;
+              packagesList.innerHTML = '';
+              packages.forEach(package => {
+                if (package != "") {
+                  fetch(
+                    `https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/${package}/author.txt`
+                    ).then(response => response.text()).then(author => {
+                    fetch(
+                      `https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/${package}/README.md`
+                      ).then(response => response.text()).then(description => {
+                      packagesList.innerHTML += `
+                                <div class="package-tile">
+                                  <div class="package-tile-content">
+                                    <h2>
+                                      <a href="https://henrymartin5.github.io/SolutionPackages/${package}/">${package}</a>
+                                    </h2>
+                                    <p>
+                                      ${truncateText(description,100)}
+                                    </p>
+                                    <p>
+                                      By <a href="https://github.com/${author}" class="package-tile-content-author">${author}</a>
+                                    </p>
+                                  </div>
+                                </div>`
+                    });
+                  })
+                  // packagesList.innerHTML += `<li><a href="https://henrymartin5.github.io/SolutionPackages/${package}">${package}</a></li>`;
+
+                } else {
+                  console.warn("Skipped package due to empty name!");
+
+                }
+                i++;
+              });
+            });
+        </script>
+      </section>
+
+      <aside id="sidebar">
+
+
+
+        <p class="repo-owner"><a href="https://github.com/HENRYMARTIN5/SolutionPackages">SolutionPackages</a> is
+          maintained by <a href="https://github.com/HENRYMARTIN5">HENRYMARTIN5</a>.</p>
+
+
+        <p>This page was (partly) generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+      </aside>
+    </div>
+  </div>
+
+</body>
+
 </html>
