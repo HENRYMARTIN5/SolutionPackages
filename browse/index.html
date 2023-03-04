@@ -94,11 +94,12 @@
         <div id="packages"><span>Loading...</span></div>
         <script>
           function truncateText(text, length) {
-            if (text.length <= length) {
-              return text;
+            var text2 = text.replace(/^#.*/,'');
+            if (text2.length <= length) {
+              return text2;
             }
 
-            return text.substr(0, length) + '\u2026'
+            return text2.substr(0, length) + '\u2026'
           }
           // Get a file from the given url, parse through the text line-by-line, and add it to the packages element
           fetch('https://raw.githubusercontent.com/HENRYMARTIN5/SolutionPackages/main/packages.txt')
